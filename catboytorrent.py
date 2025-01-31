@@ -1,4 +1,4 @@
-from bencoding import Encoder
+import bencodepy
 
-## Testing the encoding
-print(Encoder(123).encode())
+##Testing
+print(bencodepy.encode(123))
