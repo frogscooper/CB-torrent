@@ -2,7 +2,7 @@ import bencodepy
 import requests
 import random
 import tkinter as tk
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfile, askopenfilename 
 
 version_ID = ("0000")
 
@@ -10,12 +10,10 @@ version_ID = ("0000")
 
 while True:
     tk.Tk().withdraw()
-    torrent_path = askopenfilename(filetypes=[("Torrent files", "*.torrent")])
-    if torrent_path.endswith('.torrent') == False:
-        print("Please select a file that ends in .torrent")
-    else:
-        print("Getting started! :)")
-        break
+    torrent_path = askopenfile(filetypes=[("Torrent files", "*.torrent")])
+    f=open(torrent_path)
+    print("Getting started! :)")
+    break
     
 
 ##Reads and decodes the torrent file
