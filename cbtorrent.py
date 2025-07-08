@@ -10,15 +10,15 @@ version_ID = ("0000")
 
 while True:
     tk.Tk().withdraw()
-    torrent_path = askopenfile(filetypes=[("Torrent files", "*.torrent")])
-    f=open(torrent_path)
+    torrent_file_path = askopenfile(filetypes=[("Torrent files", "*.torrent")])
+    f=open(torrent_file_path)
     print("Getting started! :)")
     break
     
 
 ##Reads and decodes the torrent file
 
-with open(torrent_path, 'rb') as file:
+with open(torrent_file_path, 'rb') as file:
     meta_info = file.read()
     torrent = bencodepy.decode(meta_info)
 
