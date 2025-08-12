@@ -32,5 +32,8 @@ peer_ID = (f"CB0000-{random.randint(0, 999999999999)}")
 print(peer_ID)
 
 #tracker = requests.get
-print(f"{list(decoded_torrent_file.values())[0]}?{list(decoded_torrent_file.values())[6]}&peer id =-{peer_ID}")
+torrent_list_length = (len(decoded_torrent_file))
+indexed_torrent_file = list(decoded_torrent_file.items())[0:int(torrent_list_length)]
+print(indexed_torrent_file)
+#print(f"{indexed_torrent_file.items('announce')}?{indexed_torrent_file.items('info-hash')&peer id =-{peer_ID}")
 
