@@ -21,8 +21,7 @@ while True:
 ##Reads and decodes the torrent file
 
 with open(torrent_file_path, 'rb') as file:
-    content = file.read()
-    decoded_torrent_file = bencodepy.decode(content)
+    decoded_torrent_file = bencodepy.decode(file.read(file))
 
 #decoded_file = list(decoded_torrent_file.values())
 #print(decoded_file)
@@ -36,4 +35,3 @@ torrent_list_length = (len(decoded_torrent_file))
 indexed_torrent_file = list(decoded_torrent_file.items())[0:int(torrent_list_length)]
 print(indexed_torrent_file)
 #print(f"{indexed_torrent_file.items('announce')}?{indexed_torrent_file.items('info-hash')&peer id =-{peer_ID}")
-
